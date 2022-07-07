@@ -17,7 +17,19 @@
 </div>
 </div>
 <div class="add-book">
-    <button>+ New book</button>
+    <button id="add">+ New book</button>
+    <div class="popup">
+        <form action="post">
+            <h3>New book</h3>
+            <input type="text" id="title">
+            <input type="text" id="author">
+            <input type="number" id="pages">
+            Did you read it? <input type="checkbox" name="read" id="read">
+            <button type="submit" id="add-popup">Add</button>
+
+        </form>
+
+    </div>
 </div>
 <div class="books-container">
     <div class="book">
