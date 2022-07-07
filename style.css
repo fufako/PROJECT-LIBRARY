@@ -3,10 +3,36 @@ body{
     margin:0;   
     background-color: #E4DCCF;
     font-family: "Montserrat", sans-serif;
+    word-wrap: break-word;
+}
+.popup form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    display: none;
+    
+}
+.popup h3 {
+    margin:0;
+}
+#add-popup{
+    width: 100px;
+    height: 40px;
+    margin: 0;
 }
 .main-container{
     display: flex;
     flex-direction: column;
+    margin:0 auto;
 }
 .header {
     background-color: #2B2B2B;
@@ -55,4 +81,37 @@ body{
 }
 .books-container{
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+.book{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    align-items: center;
+    background-color: #F0EBE3;
+    border-radius: 10px;
+}
+.book button{
+    border:0;
+    width: 100px;
+    height: 30px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border-radius: 10px;
+    color:#2B2B2B;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    margin:10px;
+}
+.book button:hover{
+    background-color: #E4DCCF;
+
+}
+.book p {
+    margin:10px;
 }
