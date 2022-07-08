@@ -19,6 +19,7 @@ body{
    justify-content: center;
    visibility: hidden;
    color:#E4DCCF;
+   background-color: rgba(43, 43, 43, 0.3);
 }
 #popup button{
     margin: 0;
@@ -99,12 +100,13 @@ body{
     background-color: #F0EBE3;
 
 }
-.books-container{
+#books-container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     justify-items: center;
     align-items: center;
     gap: 20px;
+    padding: 20px 80px;
 }
 .book{
     text-align: center;
@@ -115,6 +117,7 @@ body{
     align-items: center;
     background-color: #F0EBE3;
     border-radius: 10px;
+    width: 100%;
 }
 .book button{
     border:0;
