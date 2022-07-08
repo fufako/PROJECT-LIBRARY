@@ -19,23 +19,23 @@
 <div class="add-book">
     <button id="add" onclick="openPopup()">+ New book</button>
     <div id="popup">
-        <form id="popup-form">
+        <form onsubmit="return false" id="popup-form">
             <h3>Add a book</h3>
             <label for="title">Title</label>
-            <input type="text" id="title">
+            <input type="text" id="title" name="title">
             <label for="author">Author</label>
-            <input type="text" id="author">
+            <input type="text" id="author" name="author">
             <label for="pages">How many pages?</label>
-            <input type="number" id="pages">
+            <input type="number" id="pages" name="pages">
             <label for="read">Did you read it?  </label><input type="checkbox" name="read" id="read">
-            <button type="button" onclick="addBookToLibrary()">Add</button>
+            <button type="submit">Add</button>
             <button type="button" onclick="closePopup()">Cancel</button>
 
         </form>
 
     </div>
 </div>
-<div class="books-container">
+<div id="books-container">
     <div class="book">
         <p>The big myesrey Egipitan</p>
         <p>Tom Hanks</p>
