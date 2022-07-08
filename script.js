@@ -1,4 +1,4 @@
-let myLibrary = []
+const myLibrary = []
 
 const popup = document.getElementById("popup")
 const popupForm = document.getElementById("popup-form")
@@ -32,8 +32,8 @@ function createGridItem(newBook) {
   const title = document.createElement("p")
   const author = document.createElement("p")
   const pages = document.createElement("p")
-  const readBtn = document.createElement("button")
-  const removeBtn = document.createElement("button")
+  const newReadBtn = document.createElement("button")
+  const newRemoveBtn = document.createElement("button")
 
   template.classList.add("book")
 
@@ -41,15 +41,25 @@ function createGridItem(newBook) {
   template.append(title)
   template.append(author)
   template.append(pages)
-  template.append(readBtn)
-  template.append(removeBtn)
+  template.append(newReadBtn)
+  template.append(newRemoveBtn)
 
   title.innerHTML = newBook.title
   author.innerHTML = newBook.author
   pages.innerHTML = newBook.pages
-  readBtn.innerHTML = "Read"
-  removeBtn.innerHTML = "Remove"
+  newReadBtn.innerHTML = "Read"
+  newRemoveBtn.innerHTML = "Remove"
+
+  newReadBtn.onclick = (e) => {
+    e.target.style.backgroundColor = "#EA5C2B"
+    e.target.innerHTML = "Not read"
+  }
+  newRemoveBtn.onclick = (e) => {
+    console.log(2)
+  }
 }
+
+// function fillGridItems(title, author, pages, newReadBtn, newRemoveBtn, newBook){} //
 
 function openPopup() {
   popup.style.visibility = "visible"
@@ -57,4 +67,7 @@ function openPopup() {
 function closePopup() {
   popup.style.visibility = "hidden"
   popupForm.reset()
+}
+function test(e) {
+  e.stopPropagation()
 }
