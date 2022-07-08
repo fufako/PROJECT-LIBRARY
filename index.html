@@ -1,61 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 shrink-to-fit=yes"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Library</title>
-</head>
-<body>
-<div class="main-container">
-<div class="header">
-    <div class="header-container">
-    <h1>best library in the galaxy</h1>  
-    <div class="author"><a href="https://github.com/fufako">@fufako</a></div>
-</div>
-</div>
-<div class="add-book">
-    <button id="add" onclick="openPopup()">+ New book</button>
-    <div id="popup">
-        <form onsubmit="return false" id="popup-form">
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header">
+        <div class="header-container">
+          <h1>best library in the galaxy</h1>
+          <div class="author">
+            <a href="https://github.com/fufako">@fufako</a>
+          </div>
+        </div>
+      </div>
+      <div class="add-book">
+        <button id="add" onclick="openPopup()">+ New book</button>
+        <div id="popup">
+          <form onsubmit="return false" id="popup-form">
             <h3>Add a book</h3>
             <label for="title">Title</label>
-            <input type="text" id="title" name="title" required maxlength="100">
+            <input
+              type="text"
+              id="title"
+              name="title"
+              required
+              maxlength="100"
+            />
             <label for="author">Author</label>
-            <input type="text" id="author" name="author" required maxlength="100">
+            <input
+              type="text"
+              id="author"
+              name="author"
+              required
+              maxlength="100"
+            />
             <label for="pages">How many pages?</label>
-            <input type="number" id="pages" name="pages" required maxlength="100" min="1">
-            <label for="read">Did you read it?  </label><input type="checkbox" name="read" id="read">
+            <input
+              type="number"
+              id="pages"
+              name="pages"
+              required
+              maxlength="100"
+              min="1"
+              max="10000"
+            />
+            <label for="read">Did you read it? </label
+            ><input type="checkbox" name="read" id="read" />
             <button type="submit">Add</button>
             <button type="button" onclick="closePopup()">Cancel</button>
-
-        </form>
-
+          </form>
+        </div>
+      </div>
+      <div id="books-container">
+        <div class="book">
+          <p>The big myesrey Egipitan</p>
+          <p>Tom Hanks</p>
+          <p>21424</p>
+          <button class="read">Read</button>
+          <button class="remove">Remove</button>
+        </div>
+        <div class="book">
+          <p>The big myesrey Egipitan</p>
+          <p>Tom Hanks</p>
+          <p>21424</p>
+          <button class="read">Read</button>
+          <button class="remove">Remove</button>
+        </div>
+      </div>
+      <div class="footer"></div>
     </div>
-</div>
-<div id="books-container">
-    <div class="book">
-        <p>The big myesrey Egipitan</p>
-        <p>Tom Hanks</p>
-        <p>21424</p>
-        <button class="read">Read</button>
-        <button class="remove">Remove</button>
-    </div>
-    <div class="book">
-        <p>The big myesrey Egipitan</p>
-        <p>Tom Hanks</p>
-        <p>21424</p>
-        <button class="read">Read</button>
-        <button class="remove">Remove</button>
-    </div>
-    
-
-</div>
-<div class="footer"></div>
-
-
-</div> 
-</body>
+  </body>
 </html>
