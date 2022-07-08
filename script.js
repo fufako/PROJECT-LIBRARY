@@ -1,6 +1,7 @@
 let myLibrary = [];
-const addBook = document.getElementById('add')
 const popup = document.getElementById("popup")
+const addPopup = document.getElementById('add-popup')
+
 function Book(author, title, pages) {
     this.author = author
     this.title = title
@@ -9,9 +10,15 @@ function Book(author, title, pages) {
 }
 
 function addBookToLibrary() {
-  // do stuff here
+  closePopup()
 }
 
 function openPopup (){
-    popup.style.removeProperty('visible')
+    popup.style.visibility='visible'
+    
+}
+function closePopup (){
+  popup.style.visibility='hidden'
+  popup.reset()
+  
 }
