@@ -22,7 +22,7 @@ body {
   background-color: rgba(43, 43, 43, 0.3);
 }
 #popup button {
-  margin: 0;
+  margin: 10px;
   color: #e4dccf;
 }
 #popup button:hover {
