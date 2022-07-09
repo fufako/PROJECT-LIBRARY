@@ -23,8 +23,12 @@
       </div>
       <div class="add-book">
         <button id="add" onclick="openPopup()">+ New book</button>
-        <div id="popup">
-          <form onsubmit="return false" id="popup-form">
+        <div id="popup" onclick="closePopup()">
+          <form
+            onsubmit="return false"
+            id="popup-form"
+            onclick="event.stopPropagation()"
+          >
             <h3>Add a book</h3>
             <label for="title">Title</label>
             <input
