@@ -50,15 +50,24 @@ function createGridItem(newBook) {
   newReadBtn.innerHTML = "Read"
   newRemoveBtn.innerHTML = "Remove"
 
-  newReadBtn.onclick = (e) => {
-    e.target.style.backgroundColor = "#EA5C2B"
-    e.target.innerHTML = "Not read"
-  }
-  newRemoveBtn.onclick = (e) => {
-    console.log(2)
-  }
+  bookBtnHandler(newReadBtn, newRemoveBtn)
 }
 
+function bookBtnHandler(newReadBtn, newRemoveBtn) {
+  newReadBtn.onclick = (e) => {
+    if ((e.target.innerHTML = "Read")) {
+      e.target.style.backgroundColor = "#EA5C2B"
+      e.target.innerHTML = "Not read"
+    } else {
+      e.target.style.backgroundColor = "#adcf9f;"
+      e.target.innerHTML = "Not read"
+    }
+  }
+  newRemoveBtn.onclick = (e) => {
+    e.target.parentNode.remove()
+    myLibrary.pop()
+  }
+}
 // function fillGridItems(title, author, pages, newReadBtn, newRemoveBtn, newBook){} //
 
 function openPopup() {
@@ -67,7 +76,4 @@ function openPopup() {
 function closePopup() {
   popup.style.visibility = "hidden"
   popupForm.reset()
-}
-function test(e) {
-  e.stopPropagation()
 }
