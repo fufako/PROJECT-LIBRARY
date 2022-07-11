@@ -1,4 +1,5 @@
 const myLibrary = []
+let i = 0
 
 const popup = document.getElementById("popup")
 const popupForm = document.getElementById("popup-form")
@@ -10,21 +11,23 @@ popupForm.addEventListener("submit", (e) => {
   const titleVal = popupForm.querySelector('input[name="title"').value
   const authorVal = popupForm.querySelector('input[name="author"').value
   const pagesVal = popupForm.querySelector('input[name="pages"').value
-  const newBook = new Book(titleVal, authorVal, pagesVal)
+  const readVal = popupForm.querySelector('input[name="read"]').checked
+  const newBook = new Book(titleVal, authorVal, pagesVal, readVal)
   addBookToLibrary(newBook)
 })
 
-function Book(title, author, pages) {
+function Book(title, author, pages, read) {
   this.title = title
   this.author = author
   this.pages = pages
-  this.read = false
+  this.read = read
 }
 
 function addBookToLibrary(newBook) {
   closePopup()
   myLibrary.push(newBook)
   createGridItem(newBook)
+  i += 1
 }
 
 function createGridItem(newBook) {
@@ -37,6 +40,7 @@ function createGridItem(newBook) {
 
   template.classList.add("book")
 
+  template.dataset.id = i
   bookContainer.appendChild(template)
   template.append(title)
   template.append(author)
@@ -64,8 +68,8 @@ function bookBtnHandler(newReadBtn, newRemoveBtn) {
     }
   }
   newRemoveBtn.onclick = (e) => {
+    myLibrary.splice(e.target.parentNode.dataset.id, 1)
     e.target.parentNode.remove()
-    myLibrary.pop()
   }
 }
 // function fillGridItems(title, author, pages, newReadBtn, newRemoveBtn, newBook){} //
