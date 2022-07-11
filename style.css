@@ -20,6 +20,7 @@ body {
   visibility: hidden;
   color: #e4dccf;
   background-color: rgba(43, 43, 43, 0.3);
+  z-index: 100;
 }
 #popup button {
   margin: 10px;
