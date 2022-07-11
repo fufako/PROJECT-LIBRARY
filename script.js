@@ -12,15 +12,16 @@ popupForm.addEventListener("submit", (e) => {
   const authorVal = popupForm.querySelector('input[name="author"').value
   const pagesVal = popupForm.querySelector('input[name="pages"').value
   const readVal = popupForm.querySelector('input[name="read"]').checked
-  const newBook = new Book(titleVal, authorVal, pagesVal, readVal)
+  const newBook = new Book(titleVal, authorVal, pagesVal, readVal, i)
   addBookToLibrary(newBook)
 })
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read, id) {
   this.title = title
   this.author = author
   this.pages = pages
   this.read = read
+  this.id = id
 }
 
 function addBookToLibrary(newBook) {
@@ -40,7 +41,7 @@ function createGridItem(newBook) {
 
   template.classList.add("book")
 
-  template.dataset.id = i
+  template.dataset.id = newBook.id
   bookContainer.appendChild(template)
   template.append(title)
   template.append(author)
@@ -51,28 +52,33 @@ function createGridItem(newBook) {
   title.innerHTML = newBook.title
   author.innerHTML = newBook.author
   pages.innerHTML = newBook.pages
-  newReadBtn.innerHTML = "Read"
+  newReadBtn.innerHTML = newBook.read ? "Read" : "Not read"
+  newReadBtn.className = newBook.read ? "read" : "notread"
   newRemoveBtn.innerHTML = "Remove"
 
-  bookBtnHandler(newReadBtn, newRemoveBtn)
+  bookBtnHandler(newReadBtn, newRemoveBtn, newBook)
 }
 
-function bookBtnHandler(newReadBtn, newRemoveBtn) {
+function bookBtnHandler(newReadBtn, newRemoveBtn, newBook) {
   newReadBtn.onclick = (e) => {
-    if ((e.target.innerHTML = "Read")) {
-      e.target.style.backgroundColor = "#EA5C2B"
+    if (newBook.read) {
+      e.target.className = "notread"
       e.target.innerHTML = "Not read"
+      newBook.read = false
     } else {
-      e.target.style.backgroundColor = "#adcf9f;"
-      e.target.innerHTML = "Not read"
+      e.target.className = "read"
+      e.target.innerHTML = "Read"
+      newBook.read = true
     }
   }
   newRemoveBtn.onclick = (e) => {
-    myLibrary.splice(e.target.parentNode.dataset.id, 1)
+    myLibrary.splice(
+      myLibrary.findIndex((item) => item.id === newBook.id),
+      1
+    )
     e.target.parentNode.remove()
   }
 }
-// function fillGridItems(title, author, pages, newReadBtn, newRemoveBtn, newBook){} //
 
 function openPopup() {
   popup.style.visibility = "visible"
