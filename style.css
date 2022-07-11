@@ -57,12 +57,13 @@ body {
 }
 .header {
   background-color: #2b2b2b;
-  height: 8rem;
+  height: minmax(fit-content, 8rem);
   -webkit-box-shadow: 0px 8px 13px -5px rgba(43, 43, 43, 1);
   -moz-box-shadow: 0px 8px 13px -5px rgba(43, 43, 43, 1);
   box-shadow: 0px 8px 13px -5px rgba(43, 43, 43, 1);
   position: relative;
   z-index: 10;
+  width: 100%;
 }
 .header-container {
   display: flex;
@@ -104,7 +105,7 @@ body {
   justify-items: center;
   align-items: center;
   gap: 20px;
-  padding: 20px 80px;
+  padding: 20px 3px;
 }
 .book {
   text-align: center;
