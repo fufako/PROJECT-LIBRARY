@@ -1,3 +1,16 @@
+import { initializeApp } from "firebase/app"
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCeCaTdw9DCXHufMSU4W-vTpMwIpIaUzHw",
+  authDomain: "library-1a705.firebaseapp.com",
+  projectId: "library-1a705",
+  storageBucket: "library-1a705.appspot.com",
+  messagingSenderId: "471031113462",
+  appId: "1:471031113462:web:d2483372f0325ab80caed7",
+}
+
+const app = initializeApp(firebaseConfig)
+
 const myLibrary = []
 let i = 0
 
@@ -87,3 +100,5 @@ function closePopup() {
   popup.style.visibility = "hidden"
   popupForm.reset()
 }
+
+//Auth
